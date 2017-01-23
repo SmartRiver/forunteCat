@@ -1,0 +1,49 @@
+<import src="../common/line.wxml" />
+
+<view class="view_sh">
+    <view class="sh_header">
+        <text class="T4 text_header">沪</text>
+    </view>
+    <view class="sh_content">
+        <view wx:for="{{sh_stocks}}" wx:for-item="stockItem" style="display: inline-block;">
+            <view class="item_stock" bindtap="onStockDetailEvent" data-stock="{{stockItem}}" hover="true" hover-class="item_select">
+                <text class="stock_name">{{stockItem.name}}</text>
+                <text class="stock_code">{{stockItem.code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="view_sz">
+    <view class="sz_header">
+        <text class="T4 text_header">深</text>
+    </view>
+    <view class="sz_content">
+        <view wx:for="{{sz_stocks}}" wx:for-item="stockItem" bindtap="onStockDetailEvent" data-stock="{{stockItem}}" style="display: inline-block;">
+            <view class="item_stock" hover="true" hover-class="item_select">
+                <text class="stock_name">{{stockItem.name}}</text>
+                <text class="stock_code">{{stockItem.code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class="view_sc">
+    <view class="sc_header">
+        <text class="T4 text_header">创</text>
+    </view>
+    <view class="sc_content">
+        <view wx:for="{{sc_stocks}}" wx:for-item="stockItem" bindtap="onStockDetailEvent" data-stock="{{stockItem}}" style="display: inline-block;">
+            <view class="item_stock" hover="true" hover-class="item_select">
+                <text class="stock_name">{{stockItem.name}}</text>
+                <text class="stock_code">{{stockItem.code}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+
+<!--搜索按钮-->
+<view class="icon_search" bindtap="onStockSearchEvent">
+    <icon type="search" size="23"/>
+    <text style="color: #dddddd; font-size: 26rpx;">搜索</text>
+</view>

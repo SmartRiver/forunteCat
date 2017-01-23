@@ -1,0 +1,2 @@
+<import src="../common/FundView/FundView.wxml" />
+<template is="fundview" data="{{...fundViewData}}" />
