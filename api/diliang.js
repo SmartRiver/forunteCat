@@ -12,7 +12,7 @@ function getDiliangGu() {
         showLoading: false,
         showFailMsg: false,
         method: 'GET',
-        url: `https://achelous.space:8705/stock/?symbol=dl_stocks`,
+        url: `https://baotou.bingdou.tv:8705/stock/?symbol=dl_stocks`,
     }).then(function (res) {
         return res.data
     }, function (res) {

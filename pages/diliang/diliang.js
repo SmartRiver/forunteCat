@@ -12,6 +12,7 @@ Page({
 
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+    this.test();
     this.getData();
   },
 
@@ -41,8 +42,27 @@ Page({
       path: `/pages/diliang/diliang`
     }
   },
-
+  test: function () {
+    console.log('--------------test--------------')
+    wx.request({
+      url: 'https://baotou.bingdou.tv:8705/stock/?symbol=dl_stocks', //仅为示例，并非真实的接口地址
+      
+      header: {
+          'content-type': 'application/json'
+      },
+      success: function(res) {
+        console.log(res.data)
+      },
+      fail: function(res) {
+        console.log(res)
+      },
+      complete: function(res) {
+        console.log(res)
+      },
+    })
+  },
   getData: function () {
+    console.log('-----------------11-----------')
     var that = this
     Api.diliang.getDiliangGu().then(function (results) {
       wx.stopPullDownRefresh()
@@ -51,7 +71,7 @@ Page({
         sz_stocks : results.sz,
         sc_stocks : results.sc
       })
-      console.log('-----------------s-----------')
+      console.log('-----------------22-----------')
       console.log(that.data.sh_stocks)
     }, function (res) {
       wx.stopPullDownRefresh()
