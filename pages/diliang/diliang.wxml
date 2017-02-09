@@ -42,8 +42,8 @@
     </view>
 </view>
 
-<!--搜索按钮-->
+<!--搜索按钮
 <view class="icon_search" bindtap="onStockSearchEvent">
     <icon type="search" size="23"/>
     <text style="color: #dddddd; font-size: 26rpx;">搜索</text>
-</view>
+</view>-->
